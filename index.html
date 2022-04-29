@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="public/style.css" />
+    <script src="public/app.js"></script>
+    <title>TETRIS</title>
+  </head>
+  <body>
+    <main>
+      <div class="leftTool">
+        <div class="holdBox">
+          <div class="title"><h2>HOLD</h2></div>
+          <canvas id="holdShape" width="180" height="120"></canvas>
+        </div>
+
+        <div class="infoList">
+          <div class="score">
+            <p>Score</p>
+            <h2>0</h2>
+          </div>
+          <div class="line">
+            <p>LINES</p>
+            <h2>0</h2>
+          </div>
+          <div class="timer">
+            <p>TIME</p>
+            <h2>00:00<span>.000</span></h2>
+          </div>
+        </div>
+      </div>
+
+      <canvas id="main" width="400" height="800"></canvas>
+
+      <div class="nextShape">
+        <div class="title">
+          <h2>TETRIS</h2>
+        </div>
+
+        <div class="shapeBox">
+          <canvas id="nextShape" width="240" height="600"></canvas>
+        </div>
+
+        <div class="button"><h3>Play</h3></div>
+      </div>
+    </main>
+
+    <p class="copyright">Copyright 2022. 장혁수 all rights reserved.</p>
+  </body>
+</html>
