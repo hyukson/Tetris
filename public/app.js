@@ -15,21 +15,19 @@
     init() {
       Board.$canvas = document.querySelector("#main");
       Board.ctx = Board.$canvas.getContext("2d");
-
-      Game.hook();
-    },
-
-    // 이벤트 관리
-    hook() {
+      
       // 게임시작 버튼
       document.querySelector(".button").onclick = (e) => {
         if (!Game.data.isGame) {
-          Game.data.isGame = true;
+		      Game.data.isGame = true;
 
           Game.startTimer();
         }
       };
+    },
 
+    // 이벤트 관리
+    hook() {
       // 각종 키를 눌렀을 때
       const press = {};
 
@@ -118,6 +116,8 @@
 
     // 게임시작
     start() {
+      Game.hook();
+
       Timer.start();
 
       Game.newMake();
