@@ -1,3 +1,7 @@
-# Break Out
+# Tetris
+캔버스를 이용하여 구현한 테트리스 게임입니다.
 
-공을 이용하여 벽돌을 충돌 부수는 게임입니다.
+## 게임화면
+![Untitled-1](https://user-images.githubusercontent.com/93583305/165924099-b0de634a-354f-4fa3-a4a1-d64c9403bfb2.png)
+
+![Untitled-1](https://user-images.githubusercontent.com/93583305/165925034-a18ccc6f-1cb7-444b-b83e-1d304412cb7c.png)
