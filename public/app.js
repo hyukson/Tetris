@@ -45,20 +45,6 @@
         hold: [67],
       };
 
-      const keyMove = () => {
-        // 현재 누르고 있는 키 거르기
-        const pressing = Object.values(press).filter((keyCode) => keyCode);
-
-        // 지정한 방향에 맞게
-        for (const dir in moveDir) {
-          pressing.forEach((keyCode) => {
-            moveDir[dir].includes(keyCode) && Game.moveShape(dir);
-          });
-        }
-      };
-
-      setInterval(keyMove, 70);
-
       window.onkeydown = (e) => {
         if (!Game.data.isGame) {
           return;
@@ -77,11 +63,26 @@
           return;
         }
 
-        press[e.keyCode] = e.keyCode;
+        if (press[e.keyCode]) {
+        	return;
+        }
+
+        for (const dir in moveDir) {
+          if (moveDir[dir].includes(e.keyCode)) {
+          	Game.moveShape(dir);
+
+          	clearInterval(press[e.keyCode]);
+
+          	press[e.keyCode] = setInterval(() => Game.moveShape(dir), 70);
+          	break;
+          };
+        }
       };
 
       window.onkeyup = (e) => {
         oneKeyDown = false;
+
+        clearInterval(press[e.keyCode]);
 
         press[e.keyCode] = 0;
       };
